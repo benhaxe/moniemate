@@ -9,10 +9,12 @@ class ShipmentStopDetailsItem extends StatelessWidget {
     this.illustration,
     required this.label,
     required this.details,
+    this.hasIndicator = false,
   });
   final Widget? illustration;
   final String label;
   final String details;
+  final bool hasIndicator;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class ShipmentStopDetailsItem extends StatelessWidget {
         if (illustration != null) const XMargin(8),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               label,
@@ -29,10 +32,23 @@ class ShipmentStopDetailsItem extends StatelessWidget {
                 color: AppColors.subHeading,
               ),
             ),
-            const YMargin(4),
-            Text(
-              details,
-              style: context.textTheme.labelMedium!,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (hasIndicator)
+                  const Text(
+                    " • ",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.secondaryGreen,
+                    ),
+                  ),
+                Text(
+                  details,
+                  style: context.textTheme.labelMedium!,
+                ),
+              ],
             ),
           ],
         ),

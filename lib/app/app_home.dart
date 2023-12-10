@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:moniemate/app/Calculate/calculate.dart';
+import 'package:moniemate/app/calculate/presentation/calculate.dart';
 import 'package:moniemate/app/home/presentation/home.dart';
 import 'package:moniemate/app/profile/profile.dart';
-import 'package:moniemate/app/shipment/shipment.dart';
+import 'package:moniemate/app/shipment/presentation/logic/shipment_logics.dart';
+import 'package:moniemate/app/shipment/presentation/shipment.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
 import 'package:moniemate/src/values/colors/colors.dart';
 

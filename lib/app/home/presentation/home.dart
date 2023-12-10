@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:moniemate/app/home/domain/entities.dart';
 import 'package:moniemate/app/home/presentation/views/shipment_stop_details_view.dart';
 import 'package:moniemate/app/home/presentation/widget/available_vehilces_item.dart';
+import 'package:moniemate/app/home/presentation/widget/home_appbar.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
-import 'package:moniemate/src/values/assets/images.dart';
 import 'package:moniemate/views/widget/custom_container.dart';
 import 'package:moniemate/views/widget/primary_header.dart';
 
@@ -17,10 +18,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onSurface,
-        title: const Text('MonieMate'),
-      ),
+      appBar: const HomeAppBar(),
       body: SingleChildScrollView(
         padding: context.insetsAll(20),
         child: Column(
@@ -43,13 +41,15 @@ class _HomeState extends State<Home> {
                 itemCount: 3,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (index, ctx) {
+                itemBuilder: (ctx, index) {
                   return Padding(
                     padding: context.insetsOnly(right: 8),
-                    child: const AvailableVehiclesItem(
-                      label: 'Ocean freight',
-                      details: 'international',
-                      illustrationPath: kIMGShipmentBox,
+                    child: AvailableVehiclesItem(
+                      vehicle: AvailableVehicles(
+                        freightLabel: freightLabelList[index],
+                        freightroutes: freightRouteList[index],
+                        freightIllustration: freightIllustrationList[index],
+                      ),
                     ),
                   );
                 },

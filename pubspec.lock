@@ -65,14 +65,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
-  ficonsax:
-    dependency: "direct main"
-    description:
-      name: ficonsax
-      sha256: f7c69817fb4a9a8545ed66656990d4634adad61b2b8d601fb91ba99d389fad47
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -115,6 +107,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.17.0"
   lints:
     dependency: transitive
     description:

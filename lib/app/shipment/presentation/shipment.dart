@@ -1,10 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:moniemate/app/shipment/widget/shipment_item.dart';
-import 'package:moniemate/app/shipment/widget/shipment_status_tab.dart';
+import 'package:moniemate/app/shipment/presentation/logic/shipment_logics.dart';
+import 'package:moniemate/app/shipment/presentation/view/tabs/shipment_history_tab_view.dart';
+import 'package:moniemate/app/shipment/presentation/widget/shipment_item.dart';
+import 'package:moniemate/app/shipment/presentation/widget/shipment_status_tab.dart';
+import 'package:moniemate/core/shared/enums/shipment_status_enum.dart';
+import 'package:moniemate/core/shared/models/shipment_model.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
 import 'package:moniemate/src/values/colors/colors.dart';
-import 'package:moniemate/views/widget/primary_header.dart';
 
 class Shipment extends StatefulWidget {
   const Shipment({super.key});
@@ -13,7 +16,7 @@ class Shipment extends StatefulWidget {
   State<Shipment> createState() => _ShipmentState();
 }
 
-class _ShipmentState extends State<Shipment> {
+class _ShipmentState extends State<Shipment> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -68,27 +71,44 @@ class _ShipmentState extends State<Shipment> {
             ],
           ),
         ),
-        body: SingleChildScrollView(
-          padding: context.insetsAll(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const PrimaryHeader('Shipments'),
-              const YMargin(20),
-              ListView.builder(
-                itemCount: 6,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: context.insetsOnly(bottom: 12),
-                    child: const ShipmentItem(),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        body: FutureBuilder<List<ShipmentModel>>(
+            future: ShipmentLogic.getAllShipment(),
+            builder: (_, AsyncSnapshot<List<ShipmentModel>> snapshot) {
+              final data = snapshot.data;
+              return TabBarView(
+                children: [
+                  ShipmentHistoryTabView(data: data!),
+                  ShipmentHistoryTabView(
+                    data: data
+                        .where((element) =>
+                            element.shipmentStatus ==
+                            ShipmentStatusEnum.completed)
+                        .toList(),
+                  ),
+                  ShipmentHistoryTabView(
+                    data: data
+                        .where((element) =>
+                            element.shipmentStatus ==
+                            ShipmentStatusEnum.inProgress)
+                        .toList(),
+                  ),
+                  ShipmentHistoryTabView(
+                    data: data
+                        .where((element) =>
+                            element.shipmentStatus ==
+                            ShipmentStatusEnum.pendingOrder)
+                        .toList(),
+                  ),
+                  ShipmentHistoryTabView(
+                    data: data
+                        .where((element) =>
+                            element.shipmentStatus ==
+                            ShipmentStatusEnum.cancelled)
+                        .toList(),
+                  ),
+                ],
+              );
+            }),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moniemate/app/home/domain/entities.dart';
 import 'package:moniemate/src/extensions/src/context_on_theme_extension.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
 import 'package:moniemate/src/values/colors/colors.dart';
@@ -7,13 +8,9 @@ import 'package:moniemate/views/widget/custom_container.dart';
 class AvailableVehiclesItem extends StatelessWidget {
   const AvailableVehiclesItem({
     super.key,
-    required this.label,
-    required this.details,
-    required this.illustrationPath,
+    required this.vehicle,
   });
-  final String label;
-  final String details;
-  final String illustrationPath;
+  final AvailableVehicles vehicle;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +19,18 @@ class AvailableVehiclesItem extends StatelessWidget {
       child: Stack(
         children: [
           Padding(
-            padding: context.insetsAll(12),
+            padding: context.insetsAll(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  label,
-                  style: context.textTheme.labelSmall!.apply(),
+                  vehicle.freightLabel,
+                  style: context.textTheme.labelLarge!.apply(),
                 ),
                 Text(
-                  details,
-                  style: context.textTheme.overline!.apply(
+                  vehicle.freightroutes,
+                  style: context.textTheme.labelSmall!.apply(
                     color: AppColors.subHeading,
                   ),
                 ),
@@ -41,11 +38,14 @@ class AvailableVehiclesItem extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: -20,
-            top: 60,
-            child: SizedBox(
-              height: 100,
-              child: Image.asset(illustrationPath),
+            right: -30,
+            top: 70,
+            child: Transform.rotate(
+              angle: 270,
+              child: SizedBox(
+                height: 90,
+                child: Image.asset(vehicle.freightIllustration),
+              ),
             ),
           )
         ],

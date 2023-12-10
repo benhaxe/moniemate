@@ -1,0 +1,49 @@
+
+[
+    {
+        "receiptNumber": "MOMA43857340857904",
+        "item":"Macbook pro M2",
+        "arrivalDate": "2013-03-10T02:00:00Z",
+        "sendersAddress": "Paris, 5234",
+        "receieversAddress": "Moroco, 5785",
+        "amount": 1400,
+        "shipmentStatus":"completed"
+    },
+    {
+        "receiptNumber": "MOMA20089934122231",
+        "item":"Summer linen Jacket",
+        "arrivalDate": "2013-03-10T02:00:00Z",
+        "sendersAddress": "Baercelona, 2323",
+        "receieversAddress": "Paris, 9930",
+        "amount": 650,
+        "shipmentStatus":"in-progress"
+    },
+    {
+        "receiptNumber": "MOMA35870264978659",
+        "item":"Tapered-fit jeans AW",
+        "arrivalDate": "2013-03-10T02:00:00Z",
+        "sendersAddress": "Colombia, 2219",
+        "receieversAddress": "Paris, 9033",
+        "amount": 680,
+        "shipmentStatus":"pending-order"
+    },
+    {
+        "receiptNumber": "MOMA35870264978659",
+        "item":"Slim fit jeans AW",
+        "arrivalDate": "2013-03-10T02:00:00Z",
+        "sendersAddress": "Bogota, 2341",
+        "receieversAddress": "Dhaka, 0920",
+        "amount": 370,
+        "shipmentStatus":"cancelled"
+    },
+    {
+        "receiptNumber": "MOMA23481570754963",
+        "item":"Office setup desk",
+        "arrivalDate": "2013-03-10T02:00:00Z",
+        "sendersAddress": "France, 1222",
+        "receieversAddress": "German, 9019",
+        "amount": 3570,
+        "shipmentStatus":"cancelled"
+    }
+]
+    

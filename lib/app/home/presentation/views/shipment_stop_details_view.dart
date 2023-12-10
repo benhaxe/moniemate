@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moniemate/app/home/presentation/widget/shipment_stop_details_item.dart';
 import 'package:moniemate/src/extensions/src/context_on_theme_extension.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
+import 'package:moniemate/src/values/assets/images.dart';
 import 'package:moniemate/src/values/colors/colors.dart';
 
 class ShipmentStopDetailsView extends StatelessWidget {
@@ -41,13 +42,18 @@ class ShipmentStopDetailsView extends StatelessWidget {
               children: [
                 ShipmentStopDetailsItem(
                   illustration: Container(
-                    height: 36,
-                    width: 36,
-                    decoration: const BoxDecoration(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.blue,
+                      color: AppColors.primaryOrange.withOpacity(.2),
                     ),
-                    child: Icon(Icons.add),
+                    child: Padding(
+                      padding: context.insetsAll(8.0),
+                      child: Image.asset(
+                        kIMGUnPacking,
+                      ),
+                    ),
                   ),
                   label: 'Sender',
                   details: 'Atlanta, 5243',
@@ -55,6 +61,7 @@ class ShipmentStopDetailsView extends StatelessWidget {
                 const ShipmentStopDetailsItem(
                   label: 'Time',
                   details: '2 days - 3 days',
+                  /* hasIndicator: true, */
                 ),
               ],
             ),
@@ -68,13 +75,16 @@ class ShipmentStopDetailsView extends StatelessWidget {
               children: [
                 ShipmentStopDetailsItem(
                   illustration: Container(
-                    height: 36,
-                    width: 36,
-                    decoration: const BoxDecoration(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.blue,
+                      color: AppColors.secondaryGreen.withOpacity(.2),
                     ),
-                    child: Icon(Icons.add),
+                    child: Padding(
+                      padding: context.insetsAll(8.0),
+                      child: Image.asset(kIMGPacking),
+                    ),
                   ),
                   label: 'Receiver',
                   details: 'Chicago, 6342',

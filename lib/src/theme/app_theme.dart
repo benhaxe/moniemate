@@ -42,7 +42,7 @@ ColorScheme get _lightColorScheme => ColorScheme.fromSwatch().copyWith(
       primary: AppColors.primaryPurple,
       secondary: AppColors.primaryOrange,
       surface: AppColors.neutralN50,
-      onSurface: AppColors.primaryPurple.withOpacity(0.9),
+      onSurface: AppColors.primaryPurple.withOpacity(0.8),
       onSurfaceVariant: AppColors.neutralN200,
       onBackground: Colors.black,
       onSecondary: AppColors.secondaryPurple,

@@ -21,22 +21,27 @@ class ShipmentStatusTab extends StatelessWidget {
         Text(
           label,
           style: context.textTheme.titleMedium!.apply(
-            color: AppColors.white,
+            color: isSelected
+                ? AppColors.white
+                : AppColors.neutralN50.withOpacity(.5),
           ),
         ),
         const SizedBox(width: 8),
         if (count != null)
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
             decoration: BoxDecoration(
-              color:
-                  isSelected ? AppColors.primaryOrange : AppColors.neutralN75,
+              color: isSelected
+                  ? AppColors.primaryOrange
+                  : AppColors.neutralN100.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               "$count",
               style: context.textTheme.bodySmall!.apply(
-                color: AppColors.white,
+                color: isSelected
+                    ? AppColors.white
+                    : AppColors.neutralN75.withOpacity(.7),
               ),
             ),
           ),

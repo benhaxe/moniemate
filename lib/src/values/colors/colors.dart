@@ -6,11 +6,12 @@ abstract class AppColors {
   AppColors._();
 
   //PRIMARY PALETTE
-  static Color primaryPurple = const Color(0xFF42258B);
+  static const Color primaryPurple = Color(0xFF42258B);
 
   static const Color primaryOrange = Color(0xFFED701E);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color black = Color(0xFF000000);
+  /* static const Color black = Color(0xFF000000); */
+  static const Color black = Color(0xFF101A26);
 
   //SECONDARY PALETTE
   static const Color secondaryGreen = Color(0xFF36C079);

@@ -12,7 +12,8 @@ dependencies:
     sdk: flutter
 
   google_fonts: ^6.1.0
-  ficonsax: ^0.0.3
+  intl: ^0.17.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,4 @@ flutter:
     - assets/images/
     - assets/images/profile/
     - assets/images/shipments/
+    - fixtures/
