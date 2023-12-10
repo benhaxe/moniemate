@@ -3,7 +3,7 @@
     {
         "receiptNumber": "MOMA43857340857904",
         "item":"Macbook pro M2",
-        "arrivalDate": "2013-03-10T02:00:00Z",
+        "arrivalDate": "2023-12-10T02:00:00Z",
         "sendersAddress": "Paris, 5234",
         "receieversAddress": "Moroco, 5785",
         "amount": 1400,
@@ -21,7 +21,7 @@
     {
         "receiptNumber": "MOMA35870264978659",
         "item":"Tapered-fit jeans AW",
-        "arrivalDate": "2013-03-10T02:00:00Z",
+        "arrivalDate": "2023-12-09T02:00:00Z",
         "sendersAddress": "Colombia, 2219",
         "receieversAddress": "Paris, 9033",
         "amount": 680,

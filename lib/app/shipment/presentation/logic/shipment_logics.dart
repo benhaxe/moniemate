@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -16,8 +14,8 @@ class ShipmentLogic {
       case ShipmentStatusEnum.completed:
         return ShipmentStatus(
           label: 'loading',
-          color: AppColors.secondaryGreen,
-          icon: Icons.refresh,
+          color: AppColors.secondaryBlue,
+          icon: Icons.timer,
         );
       case ShipmentStatusEnum.inProgress:
         return ShipmentStatus(
@@ -28,7 +26,7 @@ class ShipmentLogic {
       case ShipmentStatusEnum.pendingOrder:
         return ShipmentStatus(
           label: 'pending',
-          color: AppColors.secondaryGreen,
+          color: AppColors.secondaryOrange,
           icon: Icons.refresh,
         );
       case ShipmentStatusEnum.cancelled:

@@ -33,6 +33,7 @@ class AppTextField extends StatelessWidget {
     return TextFormField(
       enabled: onTap == null,
       readOnly: onTap != null,
+      onTap: onTap,
       controller: TextEditingController(text: initialValue),
       cursorColor: AppColors.subHeading,
       textCapitalization: TextCapitalization.characters,

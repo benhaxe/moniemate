@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moniemate/app/home/domain/entities.dart';
 import 'package:moniemate/app/home/presentation/views/shipment_stop_details_view.dart';
 import 'package:moniemate/app/home/presentation/widget/available_vehilces_item.dart';
-import 'package:moniemate/app/home/presentation/widget/home_appbar.dart';
+import 'package:moniemate/app/home/presentation/widget/home_app_bar.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
 import 'package:moniemate/views/widget/custom_container.dart';
 import 'package:moniemate/views/widget/primary_header.dart';

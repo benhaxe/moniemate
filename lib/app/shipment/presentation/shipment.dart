@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:moniemate/app/shipment/presentation/logic/shipment_logics.dart';
 import 'package:moniemate/app/shipment/presentation/view/tabs/shipment_history_tab_view.dart';
-import 'package:moniemate/app/shipment/presentation/widget/shipment_item.dart';
 import 'package:moniemate/app/shipment/presentation/widget/shipment_status_tab.dart';
 import 'package:moniemate/core/shared/enums/shipment_status_enum.dart';
 import 'package:moniemate/core/shared/models/shipment_model.dart';
