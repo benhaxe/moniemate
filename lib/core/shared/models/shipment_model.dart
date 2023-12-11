@@ -3,6 +3,7 @@
 import 'package:moniemate/core/shared/enums/shipment_status_enum.dart';
 
 class ShipmentModel {
+  final String? item;
   final String? receiptNumber;
   final String? arrivalDate;
   final String? sendersAddress;
@@ -11,6 +12,7 @@ class ShipmentModel {
   final ShipmentStatusEnum? shipmentStatus;
 
   ShipmentModel({
+    this.item,
     this.receiptNumber,
     this.arrivalDate,
     this.sendersAddress,
@@ -21,6 +23,7 @@ class ShipmentModel {
 
   factory ShipmentModel.fromJson(Map<String, dynamic> json) {
     return ShipmentModel(
+      item: json['item'],
       receiptNumber: json['receiptNumber'],
       arrivalDate: json['arrivalDate'],
       sendersAddress: json['sendersAddress'],

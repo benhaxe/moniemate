@@ -4,6 +4,7 @@ import 'package:moniemate/src/extensions/src/context_on_theme_extension.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
 import 'package:moniemate/src/values/assets/images.dart';
 import 'package:moniemate/src/values/colors/colors.dart';
+import 'package:moniemate/views/widget/app_divider.dart';
 
 class ShipmentStopDetailsView extends StatelessWidget {
   const ShipmentStopDetailsView({super.key});
@@ -13,24 +14,38 @@ class ShipmentStopDetailsView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          'Shipment Number',
-          style: context.textTheme.labelSmall!.apply(
-            color: AppColors.subHeading,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Shipment Number',
+                  style: context.textTheme.labelSmall!.apply(
+                    color: AppColors.subHeading,
+                  ),
+                ),
+                const YMargin(4),
+                Text(
+                  'NEJ200089934122231',
+                  style: context.textTheme.titleMedium,
+                ),
+              ],
+            ),
+            Transform.flip(
+              flipX: true,
+              child: Transform.rotate(
+                angle: -270,
+                child: Image.asset(
+                  kIMGForkLift,
+                  height: 45,
+                ),
+              ),
+            ),
+          ],
         ),
-        const YMargin(4),
-        Text(
-          'NEJ200089934122231',
-          style: context.textTheme.titleMedium,
-        ),
-        const YMargin(8),
-        const Divider(
-          color: AppColors.subHeading,
-          thickness: 0.1,
-          height: 1,
-        ),
-        const YMargin(8),
+        const AppHorizontalDivider(),
         Table(
           columnWidths: const {
             0: FlexColumnWidth(4),
@@ -97,12 +112,8 @@ class ShipmentStopDetailsView extends StatelessWidget {
             )
           ],
         ),
-        const YMargin(16),
-        const Divider(
-          color: AppColors.subHeading,
-          thickness: 0.1,
-          height: 1,
-        ),
+        const YMargin(8),
+        const AppHorizontalDivider(),
         TextButton.icon(
           onPressed: () {},
           icon: const Icon(

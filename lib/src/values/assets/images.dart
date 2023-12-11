@@ -16,5 +16,8 @@ const String kIMGOceanFreight = '$_imgShipmentsDir/cargo_freight.jpg';
 const String kIMGCargoFreight = '$_imgShipmentsDir/cargo_freight.jpg';
 const String kIMGAirFreight = '$_imgShipmentsDir/air_freight.jpg';
 
-const String kIMGUnPacking = '$_imgShipmentsDir/un_packing.png'; //Shipments
+const String kIMGForkLift = '$_imgShipmentsDir/fork_lift.jpg';
+const String kIMGBox = '$_imgShipmentsDir/box.png';
+
+const String kIMGUnPacking = '$_imgShipmentsDir/un_packing.png';
 const String kIMGPacking = '$_imgShipmentsDir/packing.png';

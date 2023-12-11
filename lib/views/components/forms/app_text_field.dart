@@ -3,6 +3,8 @@ import 'package:moniemate/src/extensions/src/context_on_theme_extension.dart';
 import 'package:moniemate/src/values/colors/colors.dart';
 
 class AppTextField extends StatelessWidget {
+  final TextEditingController? controller;
+  final FocusNode? focusNode;
   final String? hint;
   final String? initialValue;
   final Widget? suffix;
@@ -10,12 +12,15 @@ class AppTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextInputAction textInputAction;
   final VoidCallback? onTap;
+  final Function(String)? onChanged;
   final EdgeInsets? contentPadding;
   final Color? fillColor;
   final double? borderRadius;
 
   const AppTextField({
     Key? key,
+    this.controller,
+    this.focusNode,
     this.hint,
     this.initialValue,
     this.suffix,
@@ -23,6 +28,7 @@ class AppTextField extends StatelessWidget {
     this.keyboardType,
     this.textInputAction = TextInputAction.next,
     this.onTap,
+    this.onChanged,
     this.contentPadding,
     this.fillColor = const Color(0xfff9f9f9),
     this.borderRadius = 5,
@@ -31,13 +37,15 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      enabled: onTap == null,
-      readOnly: onTap != null,
+      /* enabled: onTap == null, */
+      /* readOnly: onTap != null, */
       onTap: onTap,
-      controller: TextEditingController(text: initialValue),
+      onChanged: onChanged,
+      controller: controller ?? TextEditingController(text: initialValue),
+      focusNode: focusNode,
       cursorColor: AppColors.subHeading,
       textCapitalization: TextCapitalization.characters,
-      style: context.textTheme.bodyLarge,
+      style: context.textTheme.bodyMedium,
       textInputAction: textInputAction,
       autovalidateMode: AutovalidateMode.disabled,
       keyboardType: keyboardType,

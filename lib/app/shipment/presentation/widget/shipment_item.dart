@@ -3,6 +3,7 @@ import 'package:moniemate/app/shipment/presentation/logic/shipment_logics.dart';
 import 'package:moniemate/app/shipment/presentation/widget/shipment_status_tag.dart';
 import 'package:moniemate/core/shared/models/shipment_model.dart';
 import 'package:moniemate/src/extensions/src/context_on_theme_extension.dart';
+import 'package:moniemate/src/extensions/src/string_extension.dart';
 import 'package:moniemate/src/scaler/scaler.dart';
 import 'package:moniemate/src/values/assets/images.dart';
 
